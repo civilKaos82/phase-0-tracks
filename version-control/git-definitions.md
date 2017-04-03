@@ -1,6 +1,6 @@
 # Git Definitions
 
-**Instructions: ** Define each of the following Git concepts.
+**Instructions: ** Define each of the following GitGUD concepts.
 
 * What is version control?  Why is it useful?
 1. Version control is the ability to track how your files have changed.

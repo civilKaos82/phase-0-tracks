@@ -10,9 +10,9 @@
 
 #Form Tags
 
-* <name> 
-* <action>
-* <method>
-* <type>
-* <placeholder>
-* <value>
+* <name> This sets a name for the element.
+* <action> This sets the URI of a program that processes the form information.
+* <method> This defines the HTTP method that the browser uses to submit the form.
+* <type> This defined the type of input we were using.
+* <placeholder> This defines the text that is displayed in the text boxes before we fill them in.
+* <value> This will define a value for an option we have chosen under the select element.

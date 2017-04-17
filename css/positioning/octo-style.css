@@ -1,0 +1,21 @@
+img#octo {
+  position: absolute;
+  top: 15%;
+  left: 40%;
+  z-index: 0;
+  /*margin: 10px 40%;*/
+}
+
+img#octohat {
+  position: absolute;
+  top: 8%;
+  left: 38%;
+  z-index: 1;
+}
+
+img#octoglasses {
+  position: absolute;
+  top: 25.5%;
+  left: 44.5%;
+  z-index: 1;
+}

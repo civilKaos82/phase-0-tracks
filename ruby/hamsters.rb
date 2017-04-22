@@ -5,16 +5,16 @@ puts "How loud would ya say they are?"
 level = Integer(gets.chomp)
 puts "What color would you say that is?"
 color = gets.chomp
-puts "Do you think they're a good candidate for adoption? (true/false)"
+puts "Do you think they're a good candidate for adoption? (t/f)"
 adoption = gets.chomp
-if adoption == "true"
+if adoption == "t"
   adoption = true
-elsif adoption == "false"
+elsif adoption == "f"
   adoption = false
 else
   adoption = nil
 end
-puts "What is #{hamster_name}'s age?"
+puts "What is #{hamster_name}'s age? (In years)"
 age = Integer(gets.chomp)
 if age <= 0
   age = nil

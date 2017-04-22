@@ -1,0 +1,27 @@
+#Release 0
+elevator_width = 3
+elevator_length = 3
+starting_location = door
+door_open = false
+
+Until door opens, remain stationary.
+  When door opens, move forward elevator_length / 2.
+  Stop.
+  Rotate -90 degrees.
+  Move forward elevator_width / 4
+  Stop.
+  Rotate -90 degrees.
+  Move forward elevator_length / 4.
+  Move hand to elevator control panel.
+  Align fingers to control panel button "1"
+  Push control panel button "1"
+  Rotate -90 degrees.
+  Move forward elevator_width / 4
+  Rotate 90 degrees.
+End.
+
+Until door opens, remain stationary.
+  When door opens, move forward and exit elevator.
+End.
+
+Release 1

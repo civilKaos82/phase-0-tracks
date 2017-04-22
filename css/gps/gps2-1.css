@@ -1,0 +1,50 @@
+body {
+  width: 100%;
+}
+
+header {
+  border: 2px solid grey;
+  border-top: 5px solid grey;
+  border-right: 5px solid grey;
+  border-radius: 1em;
+  background-color: beige;
+  width: 77%;
+  margin: 5%;
+  padding: 5%;
+
+}
+
+.column-1 {
+  border: 2px solid grey;
+  border-top: 5px solid grey;
+  border-right: 5px solid grey;
+  border-radius: 1em;
+  background-color: lightskyblue;
+  width: 28%;
+  margin: 5%;
+  padding: 5%;
+  float: left;
+}
+
+.column-2 {
+  border: 2px solid grey;
+  border-top: 5px solid grey;
+  border-right: 5px solid grey;
+  border-radius: 1em;
+  background-color: lightskyblue;
+  width: 28%;
+  margin: 5%;
+  padding: 5%;
+  float: left;
+}
+
+footer {
+  border: 2px solid grey;
+  border-top: 5px solid grey;
+  border-radius: 1em;
+  background-color: beige;
+  width: 77%;
+  margin: 5%;
+  padding: 5%;
+  clear: left;
+}

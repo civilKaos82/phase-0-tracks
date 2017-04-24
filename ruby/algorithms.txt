@@ -25,3 +25,13 @@ Until door opens, remain stationary.
 End.
 
 Release 1
+Make Coffee Algorithm:
+  Open coffee machine lid.
+  insert coffee filter.
+  pour coffee into filter.
+  Remove carafe from coffee machine.
+  Fill carafe at sink with water to top level indicator.
+  Pour carafe water into top of coffee machine.
+  Replace Carafe in coffee machine.
+  Close top lid to coffee machine.
+  Start Coffee machine.

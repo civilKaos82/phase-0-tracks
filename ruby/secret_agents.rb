@@ -48,4 +48,7 @@ encrypt("zed")
 decrypt("bcd")
 decrypt("afe")
 
-decrypt(encrypt("swordfish"))
+decrypt(encrypt("swordfish")) #This nested method call does not work
+#because the scope of the encrypted method does not extend to the decrypt
+#method. In other words, the two methods are separate and independent from
+#each other.

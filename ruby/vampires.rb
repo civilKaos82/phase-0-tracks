@@ -5,7 +5,18 @@ name = gets.chomp
 puts "How old are you?"
 age = Integer(gets.chomp)
 puts "What year were you born in?"
-birth_date = Integer(gets.chomp)
+birth_year = Integer(gets.chomp)
+current_year = 2017
+
+#This next code is to test if they got their age correct.
+age_correct = false
+age_incorrect = false
+if age == (current_year - birth_year)
+  age_correct = true
+else
+  age_incorrect = true
+end
+
 #This code block makes the garlic_bread answer a boolean & spits out nil if you
 #do not provide an answer in the y or n format.
 garlic_bread = nil
@@ -35,3 +46,26 @@ while insurance == nil
       insurance = nil
   end
 end
+
+#Release 2:
+if (age_correct && (garlic_bread || insurance))
+  puts "Probabaly not a vampire."
+elsif (age_incorrect && (garlic_bread || insurance))
+  puts "Probabaly a vampire."
+elsif (age_correct && (garlic_bread || insurance)) == false
+  puts "Almost certainly a vampire"
+elsif name == "Drake Cula"
+  puts "Definitely a vampire."
+elsif name == "Tu Fang"
+  puts "Definitely a vampire."
+elsif name == "Wu Tang"
+  puts "Definitely an immortal group of 90's hiphop kung-fu masters."
+else
+  puts "Results inconclusive."
+end  
+
+puts name
+puts age
+puts age_correct
+puts garlic_bread
+puts insurance

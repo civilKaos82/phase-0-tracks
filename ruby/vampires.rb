@@ -51,10 +51,26 @@ while employee_count < max_employees
     end
   end
 
+  #Release 3:
+  allergy = nil
+  while allergy == nil
+    puts "Please name any allergies you may have. Type 'done' when complete."
+    allergy = gets.chomp
+    allergy = allergy.downcase
+    if allergy == "sunshine"
+      vampire = true
+    elsif allergy == "done"
+
+    else
+      allergy = nil
+    end
+  end
   #Release 2:
   if name == "Drake Cula"
     puts "Definitely a vampire."
   elsif name == "Tu Fang"
+    puts "Definitely a vampire."
+  elsif vampire
     puts "Definitely a vampire."
   elsif (age_correct && (garlic_bread || insurance))
     puts "Probabaly not a vampire."

@@ -26,6 +26,7 @@
 #=> "the usual suspects"
 
 " suspects".insert(0, 'the usual')
+" suspects".replace('the usual suspects')
 # => "the usual suspects"
 
 "The case of the disappearing last letter".chop

@@ -1,0 +1,55 @@
+1)Variables: A variable, similar to mathematics is a letter or single word which
+can represent a number, be a string of characters, boolean value, etc. They are
+used to simplify the equations when having to call values over and over again.
+
+2)Ruby will interpret the line full_name = first_name + last_name as:
+full_name = Abraham + Lincoln.
+the final result will be full_name = AbrahamLincoln
+
+3)String: A string is a bunch of alphanumeric characters that are not explicitly
+an integer, floating point number, etc...  "5" does not equal 5.
+integer: An integer is any whole, real number without fractions or decimals.
+float: AKA a floating point number is a number with a decimal. The number on
+the right of the decimal can be a zero or any other number.
+nil: Nil represents nothing. Probably similar to a Nihilist.
+boolean: a true/false variable.
+
+4) Algorithm: An algorithm is a logic structure for a set of arguments or
+directions. They direct the flow of the program.
+
+5)Searching and sorting are the two most common categories of algorithms in CS.
+
+6) A method is a self contained portion of a program. Once defined, it cannon
+call any data outside of the method.
+
+7)Return value: The value the method returns when run.
+side-effect: When a method is run not for it's return value, but it's side
+            effect (i.e. some sort of modification to a non-local variable).
+implicit return: This is the last argument of a method that become the return
+value.
+arguments: These are the values you must provide to the defined method to return
+a value properly
+
+8)global scope: This pertains to the entire program. All variables are visible
+here.
+Method scope: This pertain to the method only.  Variables within the method are
+unknown outside of it.
+
+9)Control Flow: It is the logic structure developed for a set of arguments.
+It tells the computer given x, do y (with more complexity to the arguments,
+of course). It is important to use control flow if a programmer wanted a certain
+outcome of a program dependent upon varying conditions.
+
+10)Loop: This is a command which will repeat itself given a set of certain
+conditions you define.
+
+if: This is a conditional statement that will get executed if the statement is
+true.
+elsif: This is the next conditional statement after if.  This is also
+conditional. This statement will only get executed if it's conditions are also
+true.
+Else: This is the catchall statement if the "if" and "elsif" statements are not
+true.
+while: This is also a loop that will continue it's loop so long as its
+conditions remain true.
+until: This is a loop that repeats but stops once it's conditions are met.

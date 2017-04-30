@@ -31,12 +31,13 @@ def eachsearch(search_array, search_integer)
       index += 1
     end
   end
+  p output
 end
 
 #eachsearch test
 puts "eachsearch test"
 x = 1
 while x < 6
-lengthsearch([1, 2, 3, 4,], x)
+eachsearch([1, 2, 3, 4,], x)
   x += 1
 end

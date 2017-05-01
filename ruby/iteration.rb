@@ -1,3 +1,5 @@
+#Michael H. Glaser paired with Daniel Digney.
+#Release 1
 cars_maufacturers = [
   "General Motors",
   "Ford",
@@ -25,6 +27,6 @@ crappy_motorcycles = motorcycles.map {|build_local, company| build_local <<
 
 cars_maufacturers.map! {|car_makers| car_makers << " but crappy"}
 
-
-
 p cars_maufacturers
+
+#Release 2

@@ -116,5 +116,5 @@ def array_sorting(unsorted_array)
   p sorted_array
 end
 
-puts "Please define an unsorted array for sorting."
+puts "Please define an unsorted array for sorting:"
 array_sorting([1, 8, 3, 5, 2, 7, 6])

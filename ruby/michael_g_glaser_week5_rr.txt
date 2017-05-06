@@ -1,0 +1,40 @@
+Michael H. Glaser Review and Reflect.
+1)Data structures are useful in programming because it allows us to arrange
+data in a useful structure/container in order to perform multiple operations
+and calculations on them in a structured method.
+
+2) An arrays are ordered, integer-indexed collections of any object.
+Each element in an array is associated with and referred to by an index.
+3)
+Example 1: Car Manufactures = ["car_company1", "car_company_2", etc..]
+Example 2: grocery_stores = [safeway, whole_foods, berkeley_bowl]
+
+4) A Hash is a collection of key-value pairs.
+5)Motorcycle_manufactures_countryorigin = {
+  "Yamaha" => "Japan"
+  "Triump" => "UK"
+  "Buell" => "US"
+}
+
+persons_haircolor = {
+  "John" => "brown"
+  "Bill" => "blonde"
+  "Jake" => "black"
+}
+
+6) Iteration are commands that will allow us to run code for each individual
+item in a array or hash.  It reduces the code required as instead of having to
+index everything manually, you can tell the program to do everything for each
+piece of data in your array or hash.
+7) An example of iteration would be if a user had to input their name into a
+list and then have the list sort the entire array alphabetically.
+
+8) A Ruby block is a way of grouping statements, and may appear only in the
+source adjacent to a method call; the block is written starting on the same
+line as the method call's last parameter (or the closing parenthesis of the
+parameter list). The code in the block is not executed at the time it is
+encountered. Instead, Ruby remembers the context in which the block appears
+(the local variables, the current object, etc) and then enters the method.
+9) A block parameter is something you define when calling the block which
+the block will use to iterate with. You define it by placing it between two
+pipes ||.

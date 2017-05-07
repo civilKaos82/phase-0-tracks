@@ -45,25 +45,24 @@ Why carry a simple piece of paper when you can show off with your phone?
 
                              ShppNgLst."
 
-initial_quantity = 0
+
 shopping_list = {}
 
-def list_additem()
-  puts 'Type "done" when you\'ve finished adding to your list.'
-  name_input = ""
-  while name_input != "done"
-    puts "Enter an item for the ShppNgLst."
-    name_input = gets.chomp
-    break if name_input == "done"
-    puts "Enter a quantity for that ShppNgLst item."
-    quantity_input = gets.chomp
+def list_additem(input_items)
 
-    shopping_list[name_input] = quantity_input
-  end
-  puts shopping_list
+    static_shopping_list = {}
+    item_name_array = input.split(', ')
+
+    item_name_array.each do |item|
+      static_shopping_list[item] = 0
+    end
+
+    return static_shopping_list
 end
 
-def list_remitem(name_remov)
+
+
+def list_remitem()
   puts 'Type "done" when you\'ve finished removing items from your list.'
   name_remov = ""
 
@@ -73,13 +72,11 @@ def list_remitem(name_remov)
     name_remov = gets.chomp
     break if name_remov == "done"
 
-    shopping_list.delete(name_remov)
+    shopping_list.delete(shopping_list)
   end
-
-  shopping_list.each{|key, value| p "You need to buy #{value} #{key}."}
 end
 
-def list_moditem(name_modif)
+def list_moditem()
   puts 'Type "done" when you\'ve finished removing items from your list.'
   name_modif = ""
 
@@ -89,25 +86,29 @@ def list_moditem(name_modif)
     name_modif = gets.chomp
     break if name_modif == "done"
 
-    shopping_list.delete(name_modif)
+    shopping_list.delete(shopping_list)
   end
-
-  shopping_list.each{|key, value| p "You need to buy #{value} #{key}."}
 end
 
-puts "Let's begin with a new list."
+puts "Let's begin, shall we?
+Would you like to (add) items to your ShppNgLst, (remove) items from your
+ShppNgLst, (modify) quantities of items on your ShppNgLst, or would you
+just like us to (show) you your ShppNgLst?"
+avail_action = ["add", "remove", "modify", "show"]
+user_action = ""
 
-#def item_delete(list_item)
-#shopping_list = {
-#    "carrots" => 2,
-#    "onions" => 3,
-#    "tomato" => 1
-#  }
-
-#p shopping_list
-#shopping_list["carrots"] = 5
-#p shopping_list
-#shopping_list.delete("carrots")
-#p shopping_list
-#
-#shopping_list.each{|key, value| p "You need to buy #{value} #{key}."}
+while user_action != "done"
+  user_action = gets.chomp
+  if user_action == avail_action[0]
+    list_additem(gets.chomp)
+    p shopping_list
+    puts static_shopping_list
+  elsif user_action == avail_action[1]
+    list_remitem
+  elsif user_action == avail_action[2]
+    list_moditem
+  elsif user_action == avail_action[3]
+    shopping_list.each{|key, value| p "You need to buy #{value} #{key}."}
+  else
+  end
+end

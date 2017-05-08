@@ -8,3 +8,6 @@ module Shout
     words + "!!!" + ":D"
   end
 end
+
+p Shout.yell_angrily("ARG")
+p Shout.yell_happily("YAY")

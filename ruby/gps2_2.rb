@@ -48,16 +48,21 @@ Why carry a simple piece of paper when you can show off with your phone?
 
 shopping_list = {}
 
-def list_additem(input_items)
+def list_additem
+  name_input = ""
+  shopping_list = {}
+  puts 'Type "done" when you\'ve finished adding to your list.'
+  while name_input != "done"
+    puts "Enter an item for the ShppNgLst."
+    name_input = gets.chomp
+    break if name_input == "done"
+    puts "Enter a quantity for that ShppNgLst item."
+    quantity_input = gets.chomp
 
-    static_shopping_list = {}
-    item_name_array = input.split(', ')
-
-    item_name_array.each do |item|
-      static_shopping_list[item] = 0
-    end
-
-    return static_shopping_list
+    shopping_list[name_input] = quantity_input
+  end
+  p shopping_list
+  return shopping_list
 end
 
 
@@ -74,6 +79,7 @@ def list_remitem()
 
     shopping_list.delete(shopping_list)
   end
+  return shopping_list
 end
 
 def list_moditem()
@@ -88,6 +94,7 @@ def list_moditem()
 
     shopping_list.delete(shopping_list)
   end
+  return shopping_list
 end
 
 puts "Let's begin, shall we?
@@ -100,9 +107,9 @@ user_action = ""
 while user_action != "done"
   user_action = gets.chomp
   if user_action == avail_action[0]
-    list_additem(gets.chomp)
+    list_additem
     p shopping_list
-    puts static_shopping_list
+    #puts static_shopping_list
   elsif user_action == avail_action[1]
     list_remitem
   elsif user_action == avail_action[2]

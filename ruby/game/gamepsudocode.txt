@@ -1,0 +1,21 @@
+#Psudocode for the game.
+
+define the game class.
+  set attr_accessor for the hidden message, and attr_reader for the game is over
+  attribute.
+
+  define the initialize method.
+    Define argument to take the secret words and set it as an instance variable
+    Define the guess count as a function of the letter count.
+    Define the game is over variable as false.
+    Define an empty array for the secret word.
+
+  define word input method
+    define a setter, attr_writer, or attr_accessor command to set the secret word.
+    set the secret word as an array.
+    set an output array with '-' in the fields to change to letter when guessed
+      correctly.
+    reduce the guess count by 1.
+
+  define word check method.
+    def check

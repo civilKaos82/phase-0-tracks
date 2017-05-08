@@ -1,0 +1,54 @@
+Michael Glaser week 6 Review and Reflect
+
+1)
+class: A class is a type of object. The objects which will be instances of it
+      will all share some attributes and methods. Usually classes are used with
+      items expected to be generally related.
+
+state: These are also instance variables. The state is the value of the instance
+      variable. The instance variable can vary from class instance to class
+      instance. An instance's state can also be changed by using setter methods
+      attr_accessor, or attr_writer.
+
+behavior: These are the class's methods defined in it. The instance methods
+          defined in the class definition should be shared for all other
+          instances of the class.
+
+instance variable: This is a variable that starts with @. It is a variable That
+                  is defined in the class definition. The instance variable
+                  can be read by all other methods within the class definition.
+
+instance method: This is a method that is defined in the class definition.
+                These methods can be called on all methods of the class they're
+                defined in, while outside of the definition.
+
+2)Attributes: Attributes are just a special sort of variable that you can use
+              inside of a class declaration.
+
+3)A real world object: Car. Attributes to assign to the car: gas tank level (as
+it can vary from other cars also in the same class), miles (this will also vary
+from car to car in the Car class), dimensions (this will most likely stay the
+same for all cars in the Car class)
+
+4)The initialize method is the first method that is run in a class definition.
+The purpose of it is such that whenever a new instance is created of a defined
+class, the code in the initialize method is always run first.  It can be used
+to set initial values for every item generated from the Class.
+
+5)Modules provide compartmentalization for methods. This prevents clutter and
+decreases the likelihood of errors due to methods at different locations in the
+same file having the same name.  With a module you can create a container for
+the method to be used without confusion.
+
+Modules can also be written as mixins. As an example, a module that performs a
+certain function can be mixed in with multiple classes which will also plan to
+use the methods in the module.
+
+6) You can use a module by have self methods.  This means you must write "self."
+before the method name as you define if it to be used only by calling the module
+followed by a '.' and the method name. <somemodule>.<somemethod>
+
+You can also mixin the module into other classes by using an 'include <module>'
+command while defining the class. Before you define the class, you have to
+define the module.  Here, you do not put a 'self.' in front of the defined
+method name in the module. 

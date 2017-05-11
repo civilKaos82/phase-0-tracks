@@ -46,69 +46,73 @@ Why carry a simple piece of paper when you can show off with your phone?
                              ShppNgLst."
 
 
-shopping_list = {}
-
-def list_additem(input_items)
-
-    static_shopping_list = {}
-    item_name_array = input.split(', ')
-
-    item_name_array.each do |item|
-      static_shopping_list[item] = 0
-    end
-
-    return static_shopping_list
+def create_list
+  method_shopping_list = {}
+  return method_shopping_list
 end
 
-
-
-def list_remitem()
-  puts 'Type "done" when you\'ve finished removing items from your list.'
-  name_remov = ""
-
-  while name_remov != "done"
-
-    puts "Name an item to remove from your ShppNgLst."
-    name_remov = gets.chomp
-    break if name_remov == "done"
-
-    shopping_list.delete(shopping_list)
+def list_additem(shopping_items)
+  shopping_list_insertion_hash = {}
+  key_array = shopping_items.split(' ')
+  initial_quantity = 1
+  key_array.each do |key_insert|
+    shopping_list_insertion_hash[key_insert] = initial_quantity
   end
+  return shopping_list_insertion_hash
 end
 
-def list_moditem()
-  puts 'Type "done" when you\'ve finished removing items from your list.'
-  name_modif = ""
-
-  while name_modif != "done"
-
-    puts "Name an item to remove from your ShppNgLst."
-    name_modif = gets.chomp
-    break if name_modif == "done"
-
-    shopping_list.delete(shopping_list)
+def list_remitem(shopping_list, shopping_items)
+  key_removal_array = shopping_items.split(' ')
+  key_removal_array.each do |key_remove|
+    shopping_list.delete(key_remove)
   end
+  return shopping_list
 end
+
+def list_moditem(shopping_list, shopping_items, item_mod_quantity)
+  shopping_list.store(shopping_items, item_mod_quantity)
+end
+
+shopping_list = {
+  "first item" => 1
+}
+
+p shopping_list
 
 puts "Let's begin, shall we?
-Would you like to (add) items to your ShppNgLst, (remove) items from your
-ShppNgLst, (modify) quantities of items on your ShppNgLst, or would you
-just like us to (show) you your ShppNgLst?"
-avail_action = ["add", "remove", "modify", "show"]
+Would you like to create a (new) list, (add) items to your ShppNgLst, (remove)
+items from your ShppNgLst, (modify) quantities of items on your ShppNgLst,
+or would you just like us to (show) you your ShppNgLst?"
+avail_action = ["new", "add", "remove", "modify", "show"]
 user_action = ""
 
 while user_action != "done"
   user_action = gets.chomp
+
   if user_action == avail_action[0]
-    list_additem(gets.chomp)
+    shopping_list = create_list
     p shopping_list
-    puts static_shopping_list
+
   elsif user_action == avail_action[1]
-    list_remitem
+    puts "Enter items for the ShppNgLst. Provide a space between each item."
+    insertion_hash = list_additem(gets.chomp)
+    shopping_list.merge!(insertion_hash)
+
   elsif user_action == avail_action[2]
-    list_moditem
+    puts "Enter items to be removed from the ShppNgLst. Provide a space between each item."
+    shopping_list = list_remitem(shopping_list, gets.chomp)
+
   elsif user_action == avail_action[3]
-    shopping_list.each{|key, value| p "You need to buy #{value} #{key}."}
+    puts "Enter an item to modify on the ShppNgLst."
+    shopping_items = gets.chomp
+    puts "Enter the new quantity for #{shopping_items}."
+    item_mod_quantity = gets.chomp.to_i
+    shopping_list[shopping_items] = item_mod_quantity
+
+  elsif user_action == avail_action[4]
+    puts "You need to buy the following items:"
+    shopping_list.each{|key, value| puts "#{value} #{key}."}
+
   else
   end
 end

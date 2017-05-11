@@ -73,12 +73,6 @@ def list_moditem(shopping_list, shopping_items, item_mod_quantity)
   shopping_list.store(shopping_items, item_mod_quantity)
 end
 
-shopping_list = {
-  "first item" => 1
-}
-
-p shopping_list
-
 puts "Let's begin, shall we?
 Would you like to create a (new) list, (add) items to your ShppNgLst, (remove)
 items from your ShppNgLst, (modify) quantities of items on your ShppNgLst,

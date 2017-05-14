@@ -7,23 +7,26 @@
 #
 #
 require_relative 'state_data'
+#This is the code that reference is the file state_date.rb  It is the same as
+#adding the code in state_date.rb at the lcoation where we typied in
+# 'require_relative'
 
 class VirusPredictor
 
-  def initialize(state_of_origin, population_density, population)
+  def initialize
     @state = state_of_origin
     @population = population
     @population_density = population_density
   end
 
   def virus_effects
-    predicted_deaths(@population_density, @population, @state)
-    speed_of_spread(@population_density, @state)
+    predicted_deaths
+    speed_of_spread
   end
 
   private
 
-  def predicted_deaths(population_density, population, state)
+  def predicted_deaths
     # predicted deaths is solely based on population density
     if @population_density >= 200
       number_of_deaths = (@population * 0.4).floor

@@ -110,3 +110,20 @@ end
 
 #=======================================================================
 # Reflection Section
+
+#hat are the differences between the two different hash syntaxes shown in the state_data file?
+#- The keys in the main hash are strings like "Alabama"
+#  while they are Symbols on the inner hash like: population_density:
+#What does require_relative do? How is it different from require?
+#- link another file to the current, its as we copied the code on
+#  the require_relative to the active file
+#  there is no diffrent in the function but there is a differnt with the file location
+#  we used here  require './state_data.rb' instead of require_relative 'state_data' to test
+#  it and it worked as expected
+#What are some ways to iterate through a hash?
+# .select .map .each and many others
+#When refactoring virus_effects, what stood out to you about the variables, if anything?
+#- All the variables are available on class level,
+#  so we dont need to push to other methods that this method is calling
+#What concept did you most solidify in this challenge?
+#- one of the issues to deside which refactoring way is more suitable

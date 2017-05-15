@@ -1,7 +1,7 @@
 # Virus Predictor
 
-# I worked on this challenge [by myself, with: ].
-# We spent [#] hours on this challenge.
+# I worked on this challenge [by myself (Michael H. Glaser)  with: Hassan Almandil].
+# We spent [2.5] hours on this challenge.
 
 # EXPLANATION OF require_relative
 #
@@ -9,23 +9,39 @@
 require_relative 'state_data'
 #This is the code that reference is the file state_date.rb  It is the same as
 #adding the code in state_date.rb at the lcoation where we typied in
-# 'require_relative'
+# 'require_relative'. You can also use the code below if you wanted to
+#specify exactly where the program is to look, instead of relative to this file:
+#require '~DBC/phase-0-tracks/ruby/gps6/state_data'
 
 class VirusPredictor
 
-  def initialize
+  #The method below initializes each instance of VirusPredictor with instance variables default values.
+  def initialize(state_of_origin, population_density, population)
     @state = state_of_origin
     @population = population
     @population_density = population_density
+    #factors_hash: We created this to host the factors that will affect the speed_of_spread
+    @factors_hash = {
+      0...50 => [0.05, 2.5],
+      50...100 => [0.1, 2],
+      100...150 => [0.2, 1.5],
+      150...200 => [0.3, 1],
+      200...20000 => [0.4, 0.5]
+    }
   end
 
+#This method combines the output of both predicted deaths and speed of spread. This is used
+# because the other two instance methods are private and cannot be called on their own.
   def virus_effects
     predicted_deaths
     speed_of_spread
   end
 
-  private
+  private #This is so the methods below cannot be called outside the class definition.
 
+#This method will call the state's name and, depending on the population density,
+# identify the number of deaths based on population and population factor.
+#This instance method is private and cannot be called on its own outside the class definition.
   def predicted_deaths
     # predicted deaths is solely based on population density
     if @population_density >= 200
@@ -43,8 +59,9 @@ class VirusPredictor
     print "#{@state} will lose #{number_of_deaths} people in this outbreak"
 
   end
-
-  def speed_of_spread(population_density, state) #in months
+#This method will output the text regarding the speed of the virus spread.
+#this method is private and cannot be called outside the class definition.
+  def speed_of_spread#(population_density, state) #in months
     # We are still perfecting our formula here. The speed is also affected
     # by additional factors we haven't added into this functionality.
     speed = 0.0
@@ -85,6 +102,11 @@ california.virus_effects
 alaska = VirusPredictor.new("Alaska", STATE_DATA["Alaska"][:population_density], STATE_DATA["Alaska"][:population])
 alaska.virus_effects
 
+#New feature for all 50 states.
+STATE_DATA.each do |state_name, population_info|
+  new_virus = VirusPredictor.new(state_name, STATE_DATA[state_name][:population_density], STATE_DATA[state_name][:population])
+  new_virus.virus_effects
+end
 
 #=======================================================================
 # Reflection Section

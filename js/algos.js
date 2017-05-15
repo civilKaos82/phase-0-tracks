@@ -1,7 +1,7 @@
 //DBC 7.3 Algorithm Practice - Michael H. Glaser
 
 //Release 0//
-function longestPhrase(array){
+function LongestPhrase(array){
 
 	var phrase = array[0];
 	for ( i=0 ; i < array.length ; i++) {
@@ -13,7 +13,7 @@ function longestPhrase(array){
 
   var array = ["long phrase","longest phrase","longer phrase"];
 
-  console.log(longestPhrase(array));
+  console.log(LongestPhrase(array));
 
 //Release 1//
 function SimilarCheck (hash1, hash2) {
@@ -41,3 +41,25 @@ console.log(SimilarCheck(TestObject2, TestObject3));
 
 console.log("Are", TestObject3, "and", TestObject4, "similar?");
 console.log(SimilarCheck(TestObject2, TestObject3));
+
+//Release 2//
+function RandWordGen(WordQuantityInput) {
+  var WordArray = [];
+  var Characters = 'abcdefghijklmnopqrstuvwxyz'
+  for (i = 0; i < WordQuantityInput; i++) {
+    var output = '';
+    var length = Math.floor((Math.random() * 10) + 1);
+    for (var j = length; j > 0; --j) {
+      output += Characters[Math.floor(Math.random() * Characters.length)];
+    }
+    WordArray.push(output);
+  }
+  return WordArray
+}
+
+for (var x = 10; x > 0; x--) {
+  var RandomArrayLength = Math.floor(Math.random() * 5) + 2;
+  var CheckRandomArray = RandWordGen(RandomArrayLength);
+  console.log(CheckRandomArray);
+  console.log("The longest phrase is:", LongestPhrase(CheckRandomArray));
+}

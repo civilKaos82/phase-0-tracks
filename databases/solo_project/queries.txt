@@ -1,0 +1,51 @@
+RELEASE 2:
+1)
+  sqlite> SELECT * FROM pilots;
+  1|Disco Lando|Vanguard|true|1
+  2|Boredgamer|M50|false|2
+  3|sudomilk|Avenger Titan|true|2
+  4|Jorunn|Super Hornet|false|3
+  5|Paranoid_Android|Cutlass|false|3
+  6|Starwolf|Idris|true|1
+  sqlite>
+
+2)
+  sqlite> UPDATE pilots SET logged_on="true" WHERE id=4;
+  sqlite> SELECT * FROM pilots;
+  1|Disco Lando|Vanguard|true|1
+  2|Boredgamer|M50|false|2
+  3|sudomilk|Avenger Titan|true|2
+  4|Jorunn|Super Hornet|true|3
+  5|Paranoid_Android|Cutlass|false|3
+  6|Starwolf|Idris|true|1
+  sqlite>
+
+3)
+  sqlite> SELECT * FROM pilots, affiliation WHERE pilots.affiliation_id = affiliation.id;
+  1|Disco Lando|Vanguard|true|1|1|United Earth Empire
+  2|Boredgamer|M50|false|2|2|Independent
+  3|sudomilk|Avenger Titan|true|2|2|Independent
+  4|Jorunn|Super Hornet|true|3|3|Pirates
+  5|Paranoid_Android|Cutlass|false|3|3|Pirates
+  6|Starwolf|Idris|true|1|1|United Earth Empire
+  sqlite>
+
+4)
+  sqlite> SELECT pilots.*, affiliation.name FROM pilots JOIN affiliation ON pilots.affiliation_id = affiliation.id;
+  1|Disco Lando|Vanguard|true|1|United Earth Empire
+  2|Boredgamer|M50|false|2|Independent
+  3|sudomilk|Avenger Titan|true|2|Independent
+  4|Jorunn|Super Hornet|true|3|Pirates
+  5|Paranoid_Android|Cutlass|false|3|Pirates
+  6|Starwolf|Idris|true|1|United Earth Empire
+  sqlite>
+
+5)
+  sqlite> SELECT pilots.*, affiliation.name FROM pilots JOIN affiliation ON pilots.affiliation_id = affiliation.id;
+  1|Disco Lando|Vanguard|true|1|United Earth Empire
+  2|Boredgamer|M50|false|2|Independent
+  3|sudomilk|Avenger Titan|true|2|Independent
+  4|Jorunn|Super Hornet|true|3|Pirates
+  5|Paranoid_Android|Cutlass|false|3|Pirates
+  6|Starwolf|Idris|true|1|United Earth Empire
+  sqlite>

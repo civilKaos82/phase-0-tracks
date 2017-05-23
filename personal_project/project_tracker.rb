@@ -4,6 +4,7 @@ require 'faker'
 
 #create SQLite3 Database
 db = SQLite3::Database.new('projects.db')
+db.results_as_hash = true
 
 #create the three tables required for Projects, PM's, & Project Workflows.
 create_pm_table_cmd = <<-SQL
@@ -71,3 +72,37 @@ end
 #create_project_workflow(db, 3, 2)
 #create_project_workflow(db, 4, 3)
 #create_project_workflow(db, 5, 4)
+
+#Here we define methods for a user to add or remove a project manager.
+def user_create_projman(db, first_name, last_name)
+  db.execute('INSERT INTO project_managers (first_name, last_name) VALUES (?, ?)', [first_name, last_name])
+end
+
+def user_remove_projman(db, first_name, last_name)
+  db.execute('DELETE FROM project_managers WHERE project_managers.first_name = ? AND project_managers.last_name = ?', [first_name, last_name])
+end
+
+#def user_reassign_projman(db, ?, ?)
+#  db.execute('UPDATE project_workflow SET id = ? ')
+#end
+
+puts "Welcome to Project Tracker. Here we track which projects our project managers are assigned to.
+Would you like to (list) the project managers and their projects?"
+avail_action = ['list']
+user_action = ""
+
+while user_action != "done"
+  puts "Type 'done' when you are finished."
+  user_action = gets.chomp
+
+  if user_action == avail_action[0]
+  
+    project_managers_hash = db.execute("SELECT project_managers.first_name, project_managers.last_name, projects.name FROM project_managers, project_workflow, projects WHERE project_workflow.project_id = projects.id AND project_workflow.projman_id = project_managers.id")
+    project_managers_hash.each do |pm|
+      puts "#{pm['first_name']} #{pm['last_name']} is managing the #{pm['name']} project."
+    end
+
+  end
+end
+
+#user_remove_projman(db, gets.chomp, gets.chomp)

@@ -29,4 +29,8 @@ post '/students' do
   redirect '/'
 end
 
+#
+post '/search' do
+  db.execute("SELECT * FROM students WHERE id=?", [params['ID'].to_i])
+end
 # add static resources

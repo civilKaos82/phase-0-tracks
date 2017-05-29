@@ -49,3 +49,17 @@ end
 get '/contact/:address' do
   "#{params[:address]}"
 end
+
+# A route that can take a person's name and says "Good job, [person's name]!".
+# If the query parameter is not present, the route simply says "Good job!"
+
+get '/great_job/' do
+
+  name = params[:name]
+  if name
+    "Good job, #{name}!"
+  else
+    "Good job!"
+  end
+
+end
